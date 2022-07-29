@@ -32,29 +32,29 @@ const config = {
 
   plugins: [
     "docusaurus-plugin-sass",
-    [
-      require.resolve("@cmfcmf/docusaurus-search-local"),
-      {
-        indexDocs: true,
-        indexDocSidebarParentCategories: 0,
-        indexBlog: true,
-        indexPages: false,
-        language: ["en", "zh"],
-        style: undefined,
-        maxSearchResults: 8,
+    // [
+    //   require.resolve("@cmfcmf/docusaurus-search-local"),
+    //   {
+    //     indexDocs: true,
+    //     indexDocSidebarParentCategories: 0,
+    //     indexBlog: true,
+    //     indexPages: false,
+    //     language: ["en", "zh"],
+    //     style: undefined,
+    //     maxSearchResults: 8,
 
-        // lunr.js-specific settings
-        lunr: {
-          tokenizerSeparator: /[\s\-]+/,
-          b: 0.75,
-          k1: 1.2,
-          titleBoost: 5,
-          contentBoost: 1,
-          tagsBoost: 3,
-          parentCategoriesBoost: 2, // Only used when indexDocSidebarParentCategories > 0
-        },
-      },
-    ],
+    //     // lunr.js-specific settings
+    //     lunr: {
+    //       tokenizerSeparator: /[\s\-]+/,
+    //       b: 0.75,
+    //       k1: 1.2,
+    //       titleBoost: 5,
+    //       contentBoost: 1,
+    //       tagsBoost: 3,
+    //       parentCategoriesBoost: 2, // Only used when indexDocSidebarParentCategories > 0
+    //     },
+    //   },
+    // ],
   ],
   // 中文搜索 不太准
   // themes: [
@@ -121,13 +121,22 @@ const config = {
           src: "img/logo.svg",
         },
         items: [
-          {
-            type: "doc",
-            docId: "docusaurus/配置",
-            position: "left",
-            label: "文档",
-          },
-          { to: "/blog", label: "博客", position: "left" },
+          // {
+          //   type: "doc",
+          //   docId: "/category/总结类目",
+          //   position: "right",
+          //   label: "👨🏻‍🌾 文档",
+          // },
+          { to: "/blog", label: "👨🏻‍🎓 博客", position: "right" },
+          // {
+          //   to: "/life",
+          //   label: "👨🏻‍🎓 生活",
+          //   position: "right",
+          //   items: [
+          //     { label: "菜单", to: "/life" },
+          //     { label: "运动", to: "/sport" },
+          //   ],
+          // },
           // {
           //   href: "https://github.com/facebook/docusaurus",
           //   label: "GitHub",
@@ -135,54 +144,19 @@ const config = {
           // },
         ],
       },
+      algolia: {
+        appId: "6U5JBNCE9B",
+        apiKey: "9ddac23efb1ae0b2eb2375bb80101ae9",
+        indexName: "iu-peng",
+      },
       footer: {
         style: "dark",
-        links: [
-          {
-            title: "Docs",
-            items: [
-              {
-                label: "Tutorial",
-                to: "/docs/intro",
-              },
-            ],
-          },
-          {
-            title: "Community",
-            items: [
-              {
-                label: "Stack Overflow",
-                href: "https://stackoverflow.com/questions/tagged/docusaurus",
-              },
-              {
-                label: "Discord",
-                href: "https://discordapp.com/invite/docusaurus",
-              },
-              {
-                label: "Twitter",
-                href: "https://twitter.com/docusaurus",
-              },
-            ],
-          },
-          {
-            title: "More",
-            items: [
-              {
-                label: "Blog",
-                to: "/blog",
-              },
-              {
-                label: "GitHub",
-                href: "https://github.com/facebook/docusaurus",
-              },
-            ],
-          },
-        ],
         copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+        defaultLanguage: "markdown",
       },
     }),
 };

@@ -4,7 +4,24 @@
  */
 .home_wrap {
   display: flex;
+  flex: 1
+}
+
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+}
+
+.dark_bg {
+  @extend .container;
+  background: linear-gradient(to bottom, #152D35 30%, #395B64); background-blend-mode: multiply,multiply;
+}
+.light_bg {
+  @extend .container;
+  background-image: linear-gradient(to bottom, #fff, #E4DCCF 60%, #7D9D9C 100%);
 }
 .heroBanner {
   padding: 4rem 0;
@@ -25,14 +42,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  width: 10vw;
+  height: 50px;
+  &::before {
+    display: block;
+    content: '「';
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  &::after {
+    display: block;
+    content: '」';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 .typing_effect {
   width: 10ch;
   white-space: nowrap;

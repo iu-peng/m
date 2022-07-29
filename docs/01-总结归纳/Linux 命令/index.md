@@ -1,7 +1,3 @@
----
-slug: /
----
-
 # linux 命令
 
 ## Shell 命令
