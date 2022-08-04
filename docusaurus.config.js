@@ -32,29 +32,29 @@ const config = {
 
   plugins: [
     "docusaurus-plugin-sass",
-    // [
-    //   require.resolve("@cmfcmf/docusaurus-search-local"),
-    //   {
-    //     indexDocs: true,
-    //     indexDocSidebarParentCategories: 0,
-    //     indexBlog: true,
-    //     indexPages: false,
-    //     language: ["en", "zh"],
-    //     style: undefined,
-    //     maxSearchResults: 8,
+     [
+       require.resolve("@cmfcmf/docusaurus-search-local"),
+       {
+         indexDocs: true,
+         indexDocSidebarParentCategories: 0,
+         indexBlog: true,
+         indexPages: false,
+         language: ["en", "zh"],
+         style: undefined,
+         maxSearchResults: 8,
 
     //     // lunr.js-specific settings
-    //     lunr: {
-    //       tokenizerSeparator: /[\s\-]+/,
-    //       b: 0.75,
-    //       k1: 1.2,
-    //       titleBoost: 5,
-    //       contentBoost: 1,
-    //       tagsBoost: 3,
-    //       parentCategoriesBoost: 2, // Only used when indexDocSidebarParentCategories > 0
-    //     },
-    //   },
-    // ],
+         lunr: {
+           tokenizerSeparator: /[\s\-]+/,
+           b: 0.75,
+           k1: 1.2,
+           titleBoost: 5,
+           contentBoost: 1,
+           tagsBoost: 3,
+           parentCategoriesBoost: 2, // Only used when indexDocSidebarParentCategories > 0
+         },
+       },
+     ],
   ],
   // 中文搜索 不太准
   // themes: [
@@ -144,11 +144,11 @@ const config = {
           // },
         ],
       },
-      algolia: {
-        appId: "6U5JBNCE9B",
-        apiKey: "9ddac23efb1ae0b2eb2375bb80101ae9",
-        indexName: "iu-peng",
-      },
+      //algolia: {
+        //appId: "6U5JBNCE9B",
+        //apiKey: "9ddac23efb1ae0b2eb2375bb80101ae9",
+        //indexName: "iu-peng",
+      //},
       footer: {
         style: "dark",
         copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
